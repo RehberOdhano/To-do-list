@@ -1,3 +1,5 @@
+/* jslint esversion: 9 */
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -139,13 +141,13 @@ app.post("/delete", function (req, res) {
             } else {
                 res.redirect("/"+listName);
             }
-        })
+        });
     }
 });
 
 app.get("/about", function (req, res) {
     res.render("about");
-})
+});
 
 app.post("/work", function (req, res) {
     const item = req.body.newItem;
@@ -156,4 +158,4 @@ app.post("/work", function (req, res) {
 
 app.listen(3000, function () {
     console.log("Server is running on port 3000...");
-})
+});
